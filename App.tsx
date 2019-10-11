@@ -1,19 +1,17 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useEffect, useState} from "react";
+import * as Font from 'expo-font';
+
+import MyLibrary from "./app/screens/MyLibrary";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Alibrate!</Text>
-    </View>
-  );
-}
+  const [loading, setLoading] = useState(true);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  useEffect(() => {
+    Font.loadAsync({
+      'raleway': require('./assets/fonts/Raleway-Regular.ttf'),
+      'lato': require('./assets/fonts/Lato-Regular.ttf'),
+    }).then(() => setLoading(false));
+  }, []);
+
+  return !loading && <MyLibrary />;
+}
