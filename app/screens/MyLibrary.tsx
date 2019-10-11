@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import AlibrateText from "../components/Text";
+import AlibrateText from "../components/AlibrateText";
 
 export default function MyLibrary() {
   return (
