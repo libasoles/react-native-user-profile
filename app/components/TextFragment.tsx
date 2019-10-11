@@ -5,6 +5,6 @@ type Props = {
   children: string
 }
 
-export default function AlibrateText({ children }: Props) {
+export default function TextFragment({ children }: Props) {
   return <Text style={{ fontFamily: "raleway" }}>{children}</Text>;
 }

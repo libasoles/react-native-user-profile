@@ -1,17 +1,17 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import AlibrateText from "../components/AlibrateText";
-import Header from "../components/Header";
+import TextFragment from "../components/TextFragment";
+import Header from "./components/Header";
 
 export default function MyLibrary() {
   return (
     <View style={styles.container}>
       <Header />
-      <AlibrateText>Profile Header</AlibrateText>
-      <AlibrateText>Bought books</AlibrateText>
-      <AlibrateText>Library Tabs</AlibrateText>
-      <AlibrateText>Bottom navbar</AlibrateText>
+      <TextFragment>Profile Header</TextFragment>
+      <TextFragment>Bought books</TextFragment>
+      <TextFragment>Library Tabs</TextFragment>
+      <TextFragment>Bottom navbar</TextFragment>
     </View>
   );
 }
