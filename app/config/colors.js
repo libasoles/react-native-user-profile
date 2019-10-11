@@ -8,12 +8,14 @@ const gray = "#999";
 const colors = {
   primary: navy,
   secondary: gray,
+  lighter: white,
   light: blue,
   dark: navy,
   text: {
     primary: black,
     secondary: gray,
     highlighted: lightBlue,
+    light: white,
     dark: navy
   },
   bg: {
