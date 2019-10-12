@@ -13,6 +13,9 @@ const texts = {
       libraryBooks: "Libros",
       lists: "Listas"
     }
+  },
+  myLibrary: {
+    isEmpty: "Aún no has agregado libros aquí"
   }
 };
 

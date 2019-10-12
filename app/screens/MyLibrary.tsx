@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
+import colors from "../config/colors";
 import TextFragment from "../components/TextFragment";
 import Header from "./components/Header";
 import Profile from "./components/Profile";
-import Books from "./MyLibrary/Books";
+import StatusTabs from "./MyLibrary/StatusTabs";
 
 const stats = {
   libraryBooks: 19,
@@ -40,7 +41,7 @@ const books = [
     status: "readed",
     title: "HAMLET",
     author: "WILLIAM SHAKESPEARE",
-    cover: "b/59872eb3cba2bce50c1fbcd6/79cc66a6-ffd4-44cf-92c5-0fb0bd4eb23d",
+    cover: "b/59872e9ccba2bce50c1cba94/9c68fdd3-357a-44e4-a28e-c4be25bfa11c",
     description: "Todos mueren.",
     genre: "CLÁSICOS UNIVERSALES",
     isbn13: "9788367051701",
@@ -55,9 +56,7 @@ export default function MyLibrary() {
       <Header />
       <Profile stats={stats} personalInfo={personalInfo} />
       <TextFragment>Bought books</TextFragment>
-      <TextFragment>Library Tabs</TextFragment>
-      <Books list={books} />
-      <TextFragment>Bottom navbar</TextFragment>
+      <StatusTabs />
     </View>
   );
 }
@@ -65,6 +64,6 @@ export default function MyLibrary() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: colors.bg.lighter
   }
 });
