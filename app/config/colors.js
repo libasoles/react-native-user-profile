@@ -13,12 +13,13 @@ const colors = {
   light: blue,
   dark: navy,
   text: {
-    primary: black,
+    primary: navy,
     secondary: gray,
     highlighted: blue,
     light: lightBlue,
     lighter: white,
-    dark: navy
+    dark: navy,
+    darker: black
   },
   bg: {
     lighter: white,
