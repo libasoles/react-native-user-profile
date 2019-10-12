@@ -25,13 +25,11 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     maxHeight: 300,
-    marginLeft: 18,
-    marginRight: 18,
+    marginLeft: 16,
+    marginRight: 16,
     marginTop: 20
   },
   profile: {
-    display: "flex",
-    flexDirection: "row",
     height: 80
   },
   socialData: {

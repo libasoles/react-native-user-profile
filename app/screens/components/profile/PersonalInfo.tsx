@@ -8,30 +8,43 @@ import TextFragment from "../../../components/TextFragment";
 import Avatar from "./Avatar";
 import TextButton from "../../../components/TextButton";
 import dateToYears from "../../../helpers/dateToYears";
+import Button from "../../../components/Button";
 
 export default function PersonalInfo({ data }: { data: PersonalInfoType }) {
   const avatar = data.picture;
   const age = dateToYears(data.birthday);
 
   return (
-    <>
-      <View style={styles.image}>
-        <Avatar src={avatar} />
-      </View>
-      <View style={styles.data}>
-        <View>
-          <TextFragment style={styles.name}>{data.displayName}</TextFragment>
-          <TextFragment style={styles.age}>
-            {age + " " + texts.profile.years}
-          </TextFragment>
+    <View style={styles.container}>
+      <View style={styles.profile}>
+        <View style={styles.image}>
+          <Avatar src={avatar} />
         </View>
-        <TextButton>{texts.profile.editGenders}</TextButton>
+        <View style={styles.data}>
+          <View>
+            <TextFragment style={styles.name}>{data.displayName}</TextFragment>
+            <TextFragment style={styles.age}>
+              {age + " " + texts.profile.years}
+            </TextFragment>
+          </View>
+          <TextButton>{texts.profile.editGenders}</TextButton>
+        </View>
       </View>
-    </>
+      <View style={styles.editProfile}>
+        <Button>{texts.profile.edit}</Button>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  profile: {
+    flexDirection: "row"
+  },
   data: {
     marginLeft: 5,
     display: "flex",
@@ -54,9 +67,7 @@ const styles = StyleSheet.create({
     marginTop: 2,
     marginBottom: 2
   },
-  button: {
-    backgroundColor: colors.lighter,
-    color: colors.text.highlighted,
-    padding: 2
+  editProfile: {
+    justifyContent: "center"
   }
 });

@@ -3,6 +3,7 @@ import { StyleSheet, TextInput, View } from "react-native";
 
 import colors from "../config/colors";
 import Icon from "./Icon";
+import noAction from "../helpers/noAction";
 
 type Props = {
   value?: string;
@@ -19,7 +20,7 @@ export default function Input({
   icon = "",
   style = {},
   clearTextOnFocus = false,
-  onChange = () => {}
+  onChange = noAction
 }: Props) {
   return (
     <View style={styles.container}>

@@ -3,14 +3,16 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 
 import colors from "../config/colors";
 import TextFragment from "./TextFragment";
+import noAction from "../helpers/noAction";
 
 type Props = {
   children: string;
+  onPress?: () => void;
 };
 
-export default function TextButton({ children }: Props) {
+export default function TextButton({ children, onPress = noAction }: Props) {
   return (
-    <TouchableOpacity style={styles.button} onPress={() => {}}>
+    <TouchableOpacity style={styles.button} onPress={onPress} activeOpacity={0.7}>
       <TextFragment style={styles.text}>{children}</TextFragment>
     </TouchableOpacity>
   );
