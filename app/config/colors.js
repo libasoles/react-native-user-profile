@@ -4,6 +4,7 @@ const lightBlue = "#02a7e1";
 const black = "#333";
 const white = "#fff";
 const gray = "#999";
+const darkGray = "#444";
 
 const colors = {
   primary: navy,
@@ -14,15 +15,16 @@ const colors = {
   text: {
     primary: black,
     secondary: gray,
-    highlighted: lightBlue,
-    light: white,
+    highlighted: blue,
+    light: lightBlue,
+    lighter: white,
     dark: navy
   },
   bg: {
     lighter: white,
     light: blue,
     dark: navy,
-    darker: "#444"
+    darker: darkGray
   }
 };
 

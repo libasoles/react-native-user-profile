@@ -2,9 +2,10 @@ import React from "react";
 import { Text } from "react-native";
 
 type Props = {
-  children: string
-}
+  children: string;
+  style?: {};
+};
 
-export default function TextFragment({ children }: Props) {
-  return <Text style={{ fontFamily: "raleway" }}>{children}</Text>;
+export default function TextFragment({ children, style = {} }: Props) {
+  return <Text style={[{ fontFamily: "raleway" }, style]}>{children}</Text>;
 }
