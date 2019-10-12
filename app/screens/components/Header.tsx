@@ -27,7 +27,6 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: "row",
     backgroundColor: "#1c4865",
     justifyContent: "space-around",

@@ -23,7 +23,6 @@ export default function Profile({ personalInfo, stats }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
     maxHeight: 300,
     marginLeft: 16,
     marginRight: 16,

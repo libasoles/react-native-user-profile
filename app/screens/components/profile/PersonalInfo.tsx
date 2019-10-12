@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
   },
   data: {
     marginLeft: 5,
-    display: "flex",
     justifyContent: "space-between"
   },
   image: {

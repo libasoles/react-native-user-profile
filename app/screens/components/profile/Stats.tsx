@@ -38,14 +38,13 @@ export default function Stats({ data, labels = texts.profile.stats }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 10,
     marginBottom: 10
   },
   cell: {
-    display: "flex"
+
   },
   value: {
     fontSize: 21,
