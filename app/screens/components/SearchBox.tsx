@@ -29,7 +29,8 @@ export default function SearchBox({
 
 const styles = StyleSheet.create({
   input: {
-    borderColor: colors.lighter,
-    borderWidth: 0,
+    borderRadius: 12,
+    height: 40,
+    paddingLeft: 10,
   }
 });

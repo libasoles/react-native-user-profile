@@ -31,7 +31,7 @@ export default function PersonalInfo({ data }: { data: PersonalInfoType }) {
         </View>
       </View>
       <View style={styles.editProfile}>
-        <Button>{texts.profile.edit}</Button>
+        <Button style={{ fontSize: 15 }}>{texts.profile.edit}</Button>
       </View>
     </View>
   );

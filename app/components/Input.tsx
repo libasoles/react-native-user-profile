@@ -17,16 +17,16 @@ type Props = {
 export default function Input({
   value = "",
   placeholder = "",
-  icon = "",
+  icon = null,
   style = {},
   clearTextOnFocus = false,
   onChange = noAction
 }: Props) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       {icon && <Icon name={icon} style={styles.icon} size={22} />}
       <TextInput
-        style={[styles.input, style]}
+        style={styles.input}
         value={value}
         placeholder={placeholder}
         placeholderTextColor={colors.text.gray}
@@ -39,11 +39,11 @@ export default function Input({
 
 const styles = StyleSheet.create({
   container: {
-    height: 40,
+    height: 55,
     backgroundColor: colors.lighter,
     borderColor: colors.dark,
     borderWidth: 1,
-    borderRadius: 12,
+    borderRadius: 5,
     flexDirection: "row",
     alignItems: "center"
   },
@@ -53,12 +53,10 @@ const styles = StyleSheet.create({
     marginLeft: 10
   },
   input: {
-    fontSize: 16,
+    borderWidth: 0,
+    fontSize: 18,
     color: colors.text.dark,
-    backgroundColor: colors.lighter,
-    borderColor: colors.secondary,
-    borderWidth: 1,
-    paddingLeft: 10,
+    paddingLeft: 15,
     flex: 1
   }
 });

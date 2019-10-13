@@ -7,33 +7,38 @@ import noAction from "../helpers/noAction";
 
 type Props = {
   children: string;
+  style?: {};
   onPress?: () => void;
 };
 
-export default function Button({ children, onPress = noAction }: Props) {
+export default function Button({
+  children,
+  style = {},
+  onPress = noAction
+}: Props) {
   return (
     <TouchableHighlight
-      style={styles.button}
       onPress={onPress}
       underlayColor={colors.bg.lighter}
       activeOpacity={0.7}
     >
-      <TextFragment style={styles.text}>{children}</TextFragment>
+      <TextFragment style={[styles.button, style]}>{children}</TextFragment>
     </TouchableHighlight>
   );
 }
 
 const styles = StyleSheet.create({
   button: {
+    fontFamily: "ralewayBold",
+    fontSize: 17,
+    color: colors.text.dark,
     backgroundColor: colors.bg.lighter,
-    padding: 10,
+    textAlign: "center",
+    textAlignVertical: "center",
     borderWidth: 1,
     borderColor: colors.text.dark,
-    borderRadius: 5
-  },
-  text: {
-    fontSize: 15,
-    fontFamily: "lato",
-    color: colors.text.dark
+    borderRadius: 5,
+    height: 55,
+    padding: 10
   }
 });

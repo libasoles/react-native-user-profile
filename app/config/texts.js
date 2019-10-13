@@ -1,4 +1,16 @@
 const texts = {
+  login: {
+    title: "Iniciar Sesión",
+    withFacebook: "Ingresar con facebook",
+    form: {
+      user: "Ingresa usuario o e-mail",
+      password: "Ingresa tu contraseña",
+      button: "Iniciar Sesión",
+      forgot: "¿Olvidaste tu contraseña?",
+      noAccount: "¿No tienes una cuenta?",
+      register: "Regístrate ahora",
+    }
+  },
   searchBox: {
     booksAndAuthors: "Buscar libros por título o autor"
   },

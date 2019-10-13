@@ -15,7 +15,7 @@ export default function UnderConstruction() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.bg.white,
+    backgroundColor: colors.bg.lighter,
     justifyContent: "center",
     alignContent: "center",
     alignItems: "center",
