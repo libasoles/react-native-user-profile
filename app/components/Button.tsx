@@ -8,21 +8,26 @@ import noAction from "../helpers/noAction";
 type Props = {
   children: string;
   style?: {};
+  underlayColor?: string;
   onPress?: () => void;
 };
 
 export default function Button({
   children,
   style = {},
-  onPress = noAction
+  underlayColor = "transparent",
+  onPress = noAction,
+  ...rest
 }: Props) {
   return (
     <TouchableHighlight
       onPress={onPress}
-      underlayColor={colors.bg.lighter}
+      underlayColor={underlayColor}
       activeOpacity={0.7}
     >
-      <TextFragment style={[styles.button, style]}>{children}</TextFragment>
+      <TextFragment style={[styles.button, style]} {...rest}>
+        {children}
+      </TextFragment>
     </TouchableHighlight>
   );
 }

@@ -8,8 +8,12 @@ type Props = {
   style?: {};
 };
 
-export default function TextFragment({ children, style = {} }: Props) {
-  return <Text style={[defaultStyle, style]}>{children}</Text>;
+export default function TextFragment({ children, style = {}, ...rest }: Props) {
+  return (
+    <Text style={[defaultStyle, style]} {...rest}>
+      {children}
+    </Text>
+  );
 }
 
 const defaultStyle = {

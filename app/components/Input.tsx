@@ -11,7 +11,7 @@ type Props = {
   icon?: string;
   style?: {};
   clearTextOnFocus?: boolean;
-  onChange?: () => void;
+  onChange?: (e: any) => void;
 };
 
 export default function Input({
