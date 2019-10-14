@@ -9,7 +9,8 @@ const texts = {
       forgot: "¿Olvidaste tu contraseña?",
       noAccount: "¿No tienes una cuenta?",
       register: "Regístrate ahora",
-    }
+    },
+    error: "Error de autenticación"
   },
   searchBox: {
     booksAndAuthors: "Buscar libros por título o autor"

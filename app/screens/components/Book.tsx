@@ -13,7 +13,7 @@ type Props = {
 
 export default function Book({ data }: Props) {
   const { cover, genre, title, author } = data;
-  const image = `${config.books.baseURI}/${cover}/small`;
+  const image = `${config.books.baseURL}/${cover}/small`;
 
   return (
     <View style={styles.container}>

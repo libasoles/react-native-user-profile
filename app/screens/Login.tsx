@@ -8,13 +8,23 @@ import Footer from "./Login/Footer";
 
 type Props = {
   onSubmit: (any) => void;
+  isAuthenticating?: boolean;
+  errorMessage?: string;
 };
 
-export default function Login({ onSubmit }: Props) {
+export default function Login({
+  onSubmit,
+  isAuthenticating = false,
+  errorMessage = ""
+}: Props) {
   return (
     <Container behavior="position" enabled>
       <Header />
-      <Form onSubmit={onSubmit} />
+      <Form
+        onSubmit={onSubmit}
+        isAuthenticating={isAuthenticating}
+        errorMessage={errorMessage}
+      />
       <Footer />
     </Container>
   );

@@ -2,16 +2,23 @@ import React, { useEffect, useState } from "react";
 import * as Font from "expo-font";
 import { Feather } from "@expo/vector-icons";
 
-import AppContainer from "./app/AppContainer";
+import Providers from "./app/Providers";
+import AppGateway from "./app/AppGateway";
 
-export default function App() {
+function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     loadFonts().then(() => setLoading(false));
   }, []);
 
-  return !loading && <AppContainer />;
+  return (
+    !loading && (
+      <Providers>
+        <AppGateway />
+      </Providers>
+    )
+  );
 }
 
 function loadFonts() {
@@ -23,3 +30,4 @@ function loadFonts() {
     latoBold: require("./assets/fonts/Lato-Bold.ttf")
   });
 }
+export default App;

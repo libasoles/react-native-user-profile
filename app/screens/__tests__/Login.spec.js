@@ -1,9 +1,9 @@
 import React from "react";
 import { fireEvent, render } from "@testing-library/react-native";
 
-import Login from "./Login";
+import Login from "../Login";
 
-jest.mock("../components/Icon", () => icon => {
+jest.mock("../../components/Icon", () => icon => {
   const { Text } = require("react-native");
   return <Text>{icon.name}</Text>;
 });

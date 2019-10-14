@@ -21,7 +21,6 @@ export default function Header() {
 }
 
 const Container = styled.View`
-  flex: 1;
   min-height: 250px;
   max-height: 400px;
   width: ${Dimensions.get("window").width};

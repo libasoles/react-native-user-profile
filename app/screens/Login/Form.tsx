@@ -10,6 +10,8 @@ import TransparentButton from "../components/TransparentButton";
 
 type Props = {
   onSubmit: (any) => void;
+  isAuthenticating?: boolean;
+  errorMessage?: string;
 };
 
 const innerMargin = {
@@ -38,7 +40,11 @@ function useForm(onSubmit) {
   };
 }
 
-export default function Form({ onSubmit }: Props) {
+export default function Form({
+  onSubmit,
+  isAuthenticating = false,
+  errorMessage = ""
+}: Props) {
   const { username, password, setUser, setPassword, submit } = useForm(
     onSubmit
   );
@@ -47,7 +53,7 @@ export default function Form({ onSubmit }: Props) {
     <Container>
       <FacebookButton>{texts.login.withFacebook.toUpperCase()}</FacebookButton>
 
-      <FormDivider />
+      <FormDivider active={isAuthenticating} />
 
       <Input
         onChange={setUser}
@@ -63,6 +69,8 @@ export default function Form({ onSubmit }: Props) {
         style={{ ...innerMargin }}
       />
 
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+
       <SubmitButton style={{ ...innerMargin }} testID="submit" onPress={submit}>
         {texts.login.form.button.toUpperCase()}
       </SubmitButton>
@@ -72,11 +80,17 @@ export default function Form({ onSubmit }: Props) {
   );
 }
 
-function FormDivider() {
+function FormDivider({ active }) {
+  const divider = active ? (
+    <Loading size="small" color={colors.text.secondary} />
+  ) : (
+    <DividerText> o </DividerText>
+  );
+
   return (
     <Divider>
       <DividerLine />
-      <DividerText> o </DividerText>
+      {divider}
       <DividerLine />
     </Divider>
   );
@@ -113,4 +127,15 @@ const DividerText = styled(TextFragment)`
 const SubmitButton = styled(Button)`
   background-color: ${colors.bg.light};
   color: ${colors.text.lighter};
+`;
+
+const Loading = styled.ActivityIndicator`
+  margin: 20px;
+`;
+
+const ErrorMessage = styled(TextFragment)`
+  font-size: 18px;
+  color: ${colors.text.error};
+  padding-top: 10px;
+  padding-bottom: 10px;
 `;

@@ -20,7 +20,8 @@ const colors = {
     light: lightBlue,
     lighter: white,
     dark: navy,
-    darker: black
+    darker: black,
+    error: "#FF7777"
   },
   bg: {
     lighter: white,

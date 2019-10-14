@@ -1,6 +1,9 @@
 const config = {
+  api: {
+    baseURL: "https://api.alibrate.com/v1"
+  },
   books: {
-    baseURI: "https://covers.alibrate.com"
+    baseURL: "https://covers.alibrate.com" // for book images
   }
 };
 
