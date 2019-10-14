@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-import colors from "../config/colors";
-import TextFragment from "../components/TextFragment";
+import colors from "../../config/colors";
+import TextFragment from "../../components/TextFragment";
 
 export default function UnderConstruction() {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 
-import colors from "../../config/colors";
 import Input from "../../components/Input";
+import noAction from "../../helpers/noAction";
 
 type Props = {
   value?: string;
@@ -13,7 +13,7 @@ type Props = {
 export default function SearchBox({
   value = "",
   placeholder = "Buscar...",
-  onChange = () => {}
+  onChange = noAction
 }: Props) {
   return (
     <Input

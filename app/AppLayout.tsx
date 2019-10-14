@@ -3,7 +3,7 @@ import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 
 import colors from "./config/colors";
-import UnderConstruction from "./screens/UnderConstruction";
+import UnderConstruction from "./screens/components/UnderConstruction";
 import MyLibrary from "./screens/MyLibrary";
 import Icon from "./components/Icon";
 
