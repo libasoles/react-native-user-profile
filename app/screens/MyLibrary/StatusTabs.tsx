@@ -8,24 +8,28 @@ import Books from "./Books";
 const RouteConfigs = {
   Read: {
     screen: Books,
+    params: { status: 'readed' },
     navigationOptions: {
       tabBarLabel: "Leídos"
     }
   },
   Reading: {
     screen: Books,
+    params: { status: 'reading' },
     navigationOptions: {
       tabBarLabel: "Leyendo"
     }
   },
   WantToRead: {
     screen: Books,
+    params: { status: 'wantToRead' },
     navigationOptions: {
       tabBarLabel: "Por leer"
     }
   },
   Abandoned: {
     screen: Books,
+    params: { status: 'abandoned' },
     navigationOptions: {
       tabBarLabel: "Abandonado"
     }

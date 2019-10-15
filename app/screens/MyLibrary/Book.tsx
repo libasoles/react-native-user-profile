@@ -1,7 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 
-import config from "../../config";
 import colors from "../../config/colors";
 import BookType from "../../types/book";
 import TextFragment from "../../components/TextFragment";
@@ -13,12 +12,11 @@ type Props = {
 
 export default function Book({ data }: Props) {
   const { cover, genre, title, author } = data;
-  const image = `${config.books.baseURL}/${cover}/small`;
 
   return (
     <View style={styles.container}>
       <View>
-        <Image style={styles.image} source={{ uri: image }} />
+        <Image style={styles.image} source={{ uri: cover }} />
       </View>
       <View style={styles.data}>
         <TextFragment style={styles.genre}>{genre}</TextFragment>

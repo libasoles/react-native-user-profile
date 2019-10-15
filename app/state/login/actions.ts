@@ -1,12 +1,9 @@
 import jwtDecode from "jwt-decode";
 
-import config from "../../config";
 import texts from "../../config/texts";
 import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT } from "./reducer";
-import { createClient, setClientToken } from "../../services/api";
+import { api, setAPIToken } from "../../services/api";
 import Storage from "../../services/storage";
-
-const api = createClient({ baseURL: config.api.baseURL });
 
 const authStorageKey = "authToken";
 
@@ -37,6 +34,7 @@ export function authenticate() {
       const alreadyAuthenticated = getState().auth.currentUser;
       if (!alreadyAuthenticated) {
         const currentToken = await Storage.getItem(authStorageKey);
+        setAPIToken(currentToken);
         dispatch(loginAction(currentToken));
       }
     } catch (e) {}
@@ -55,7 +53,7 @@ export function login(credentials) {
       .post("/auth/local", credentials)
       .then(res => {
         const { access_token } = res.data;
-        setClientToken(api, access_token); // configure api client
+        setAPIToken(access_token);
         Storage.setItem(authStorageKey, access_token);
 
         dispatch(loginAction(access_token));

@@ -6,7 +6,6 @@ type Book = {
   title: string;
   description: string;
   genre: string;
-  isbn13: string;
   rating: number;
   reviews: number;
 };
