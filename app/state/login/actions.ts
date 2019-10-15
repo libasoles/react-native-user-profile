@@ -29,16 +29,17 @@ function loginErrorAction(message) {
 }
 
 /**
- * User already has a valid token
+ * If user already has a valid token, log in
  */
 export function authenticate() {
-  return (dispatch, getState) => {
-    Storage.getItem(authStorageKey).then(token => {
-      const alreadyLogged = getState().auth.currentUser;
-      if (!alreadyLogged) {
-        dispatch(loginAction(token));
+  return async (dispatch, getState) => {
+    try {
+      const alreadyAuthenticated = getState().auth.currentUser;
+      if (!alreadyAuthenticated) {
+        const currentToken = await Storage.getItem(authStorageKey);
+        dispatch(loginAction(currentToken));
       }
-    });
+    } catch (e) {}
   };
 }
 

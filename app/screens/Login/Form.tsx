@@ -20,7 +20,7 @@ const innerMargin = {
 };
 
 function useForm(onSubmit) {
-  const [username, setUser] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const submit = useCallback(() => {
@@ -31,11 +31,11 @@ function useForm(onSubmit) {
     username,
     password,
     submit,
-    setUser: useCallback(({ target }) => {
-      setUser(target.value);
+    setUsername: useCallback(value => {
+      setUsername(value);
     }, []),
-    setPassword: useCallback(({ target }) => {
-      setPassword((target as HTMLInputElement).value);
+    setPassword: useCallback(value => {
+      setPassword(value);
     }, [])
   };
 }
@@ -45,7 +45,7 @@ export default function Form({
   isAuthenticating = false,
   errorMessage = ""
 }: Props) {
-  const { username, password, setUser, setPassword, submit } = useForm(
+  const { username, password, setUsername, setPassword, submit } = useForm(
     onSubmit
   );
 
@@ -56,7 +56,7 @@ export default function Form({
       <FormDivider active={isAuthenticating} />
 
       <Input
-        onChange={setUser}
+        onChange={setUsername}
         placeholder={texts.login.form.user}
         value={username}
         style={{ ...innerMargin }}
@@ -66,6 +66,7 @@ export default function Form({
         onChange={setPassword}
         placeholder={texts.login.form.password}
         value={password}
+        type="password"
         style={{ ...innerMargin }}
       />
 

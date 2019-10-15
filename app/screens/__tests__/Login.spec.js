@@ -59,8 +59,8 @@ describe("form", () => {
     expect(user.props.value).toBe("");
     expect(pass.props.value).toBe("");
 
-    fireEvent.change(user, { target: { value: "Sancho" } });
-    fireEvent.change(pass, { target: { value: "LaM4nch4" } });
+    fireEvent.changeText(user, "Sancho");
+    fireEvent.changeText(pass, "LaM4nch4");
     expect(user.props.value).toBe("Sancho");
     expect(pass.props.value).toBe("LaM4nch4");
   }

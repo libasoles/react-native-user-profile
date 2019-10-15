@@ -8,6 +8,7 @@ import noAction from "../helpers/noAction";
 type Props = {
   value?: string;
   placeholder?: string;
+  type?: string;
   icon?: string;
   style?: {};
   clearTextOnFocus?: boolean;
@@ -17,21 +18,25 @@ type Props = {
 export default function Input({
   value = "",
   placeholder = "",
+  type = "none",
   icon = null,
   style = {},
   clearTextOnFocus = false,
   onChange = noAction
 }: Props) {
+  const secureText = type === "password";
+
   return (
     <View style={[styles.container, style]}>
       {icon && <Icon name={icon} style={styles.icon} size={22} />}
       <TextInput
         style={styles.input}
         value={value}
+        secureTextEntry={secureText}
         placeholder={placeholder}
         placeholderTextColor={colors.text.gray}
         clearTextOnFocus={clearTextOnFocus}
-        onChange={onChange}
+        onChangeText={onChange}
       />
     </View>
   );
