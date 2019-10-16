@@ -38,6 +38,7 @@ const RouteConfigs = {
 
 const TabNavigatorConfig = {
   initialRouteName: "Read",
+  lazy: true,
   tabBarOptions: {
     style: {
       height: 50,

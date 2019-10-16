@@ -9,11 +9,18 @@ function loadingAction() {
   };
 }
 
-function booksLoadedAction(status, data) {
+function booksLoadedAction({
+  status,
+  data,
+  page,
+  pages
+}) {
   return {
     type: BOOKS_LOADED,
     payload: {
       list: serializeBooks(data),
+      page,
+      pages,
       status
     }
   };
@@ -25,7 +32,7 @@ function booksLoadingErrorAction() {
   };
 }
 
-export function fetchBooks({ status, sort = "rating", limit = 10, page = 1 }) {
+export function fetchBooks({ status, sort = "rating", limit = 5, page = 1 }) {
   return dispatch => {
     const queryString = toQueryString({
       page,
@@ -39,7 +46,14 @@ export function fetchBooks({ status, sort = "rating", limit = 10, page = 1 }) {
     api
       .get("/library/user/me?" + queryString)
       .then(({ data }) => {
-        dispatch(booksLoadedAction(status, data.docs));
+        dispatch(
+          booksLoadedAction({
+            status,
+            data: data.docs,
+            pages: data.pages,
+            page: data.page
+          })
+        );
       })
       .catch(() => {
         dispatch(booksLoadingErrorAction);

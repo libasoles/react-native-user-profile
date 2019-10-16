@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, StyleSheet, View } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -11,22 +11,32 @@ import NoBooks from "./NoBooks";
 type Returns = {
   list: BookType[];
   loading: boolean;
-  page: number;
+  setPage: () => void;
   pages: number;
 };
 
 function useBooks({ status }): Returns {
+  const [page, setPage] = useState(1);
+
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchBooks({ status }));
-  }, []);
+    dispatch(fetchBooks({ status, page }));
+  }, [page]);
 
   return useSelector(state => {
     const { loading, lists } = state.books;
+    const { pages, page, list } = lists[status];
 
     return {
-      list: lists[status].list,
-      loading
+      list,
+      loading,
+      setPage: useCallback(() => {
+        const shouldFetchNextPage = page < pages;
+
+        if (shouldFetchNextPage) {
+          setPage(page + 1);
+        }
+      }, [page, pages])
     };
   });
 }
@@ -41,25 +51,29 @@ function Loading() {
 
 export default function Books(props) {
   const { status } = props.navigation.state.params;
-  const { loading, list } = useBooks({ status });
+  const { loading, list, setPage } = useBooks({ status });
+  const hasBooks = list.length > 0;
 
-  if (loading) return <Loading />;
-
-  if (!list.length) return <NoBooks />;
+  if (!loading && !hasBooks) return <NoBooks />;
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={list}
-        keyExtractor={item => item.id}
-        renderItem={({ item }) => <Book data={item} />}
-      />
+      {hasBooks && (
+        <FlatList
+          data={list}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => <Book data={item} />}
+          onEndReached={setPage}
+        />
+      )}
+      {loading && <Loading />}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     margin: 10,
     marginBottom: 20
   },

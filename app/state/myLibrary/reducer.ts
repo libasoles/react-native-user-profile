@@ -34,13 +34,17 @@ export default function books(
       };
     case BOOKS_LOADED:
       const { status, list, page, pages } = action.payload;
+
+      const shouldAppendToList = page !== 1;
+      const booksList = shouldAppendToList ? state.lists[status].list.concat(list) : list;
+
       return {
         ...state,
         loading: false,
         lists: {
           ...state.lists,
           [status]: {
-            list,
+            list: booksList,
             page,
             pages
           }
