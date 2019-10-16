@@ -4,34 +4,35 @@ import { createMaterialTopTabNavigator } from "react-navigation-tabs";
 import colors from "../../config/colors";
 import { createAppContainer } from "react-navigation";
 import Books from "./Books";
+import status from "../../enums/status";
 
 const RouteConfigs = {
   Read: {
     screen: Books,
-    params: { status: 'readed' },
+    params: { status: "readed" },
     navigationOptions: {
-      tabBarLabel: "Leídos"
+      tabBarLabel: status.readed
     }
   },
   Reading: {
     screen: Books,
-    params: { status: 'reading' },
+    params: { status: "reading" },
     navigationOptions: {
-      tabBarLabel: "Leyendo"
+      tabBarLabel: status.reading
     }
   },
   WantToRead: {
     screen: Books,
-    params: { status: 'wantToRead' },
+    params: { status: "wantToRead" },
     navigationOptions: {
-      tabBarLabel: "Por leer"
+      tabBarLabel: status.wantToRead
     }
   },
   Abandoned: {
     screen: Books,
-    params: { status: 'abandoned' },
+    params: { status: "abandoned" },
     navigationOptions: {
-      tabBarLabel: "Abandonados"
+      tabBarLabel: status.abandoned
     }
   }
 };
@@ -66,6 +67,9 @@ const TabNavigatorConfig = {
   }
 };
 
-const StatusTabs = createMaterialTopTabNavigator(RouteConfigs, TabNavigatorConfig);
+const StatusTabs = createMaterialTopTabNavigator(
+  RouteConfigs,
+  TabNavigatorConfig
+);
 
 export default createAppContainer(StatusTabs);

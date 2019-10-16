@@ -28,7 +28,9 @@ const texts = {
     }
   },
   myLibrary: {
-    isEmpty: "Aún no has agregado libros aquí"
+    isEmpty: "Aún no has agregado libros aquí",
+    boughtBooks: "Mis libros comprados",
+    rating: "Calificación general",
   }
 };
 

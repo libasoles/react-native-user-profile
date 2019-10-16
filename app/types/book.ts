@@ -6,7 +6,7 @@ type Book = {
   title: string;
   description: string;
   genre: string;
-  rating: number;
+  rating: string;
   reviews: number;
 };
 

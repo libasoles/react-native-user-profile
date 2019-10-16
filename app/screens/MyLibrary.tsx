@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 
 import colors from "../config/colors";
-import TextFragment from "../components/TextFragment";
 import Header from "./components/Header";
 import Profile from "./components/Profile";
 import StatusTabs from "./MyLibrary/StatusTabs";
+import BoughtBooks from "./MyLibrary/BoughtBooks";
 
 const stats = {
   libraryBooks: 19,
@@ -27,7 +27,7 @@ export default function MyLibrary() {
     <View style={styles.container}>
       <Header />
       <Profile stats={stats} personalInfo={personalInfo} />
-      <TextFragment>Bought books</TextFragment>
+      <BoughtBooks />
       <StatusTabs />
     </View>
   );

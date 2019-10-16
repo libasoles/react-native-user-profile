@@ -2,6 +2,7 @@ import config from "../../config";
 import BookType from "../../types/book";
 
 export function serializeBook(data): BookType {
+
   return {
     id: data.book_id,
     status: data.status,
@@ -10,7 +11,7 @@ export function serializeBook(data): BookType {
     title: data.book.title,
     description: data.book.description,
     genre: data.book.genre,
-    rating: +data.globalRating.rating,
+    rating: data.globalRating.rating,
     reviews: +data.globalRating.reviews
   };
 }

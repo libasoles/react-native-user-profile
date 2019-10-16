@@ -28,7 +28,7 @@ describe("Input", () => {
     );
     const input = getByPlaceholderText("Buscar");
 
-    fireEvent.change(input, { target: { value: "Quijote" } });
+    fireEvent.changeText(input, { target: { value: "Quijote" } });
     expect(onChange).toHaveBeenCalledTimes(1);
   });
 
