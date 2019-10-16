@@ -31,7 +31,7 @@ const RouteConfigs = {
     screen: Books,
     params: { status: 'abandoned' },
     navigationOptions: {
-      tabBarLabel: "Abandonado"
+      tabBarLabel: "Abandonados"
     }
   }
 };
