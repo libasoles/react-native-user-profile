@@ -8,7 +8,7 @@ Un ejercicio de **React Native**, con `login` y despliegue de datos con paginaci
 - Paginación dinámica e independiente en cada tab.
 
 ## Stack
-- React Native vía _Expo_, w/hook
+- React Native (vía _Expo_), w/hook
 - Typescript
 - Redux w/thunks & redux hooks
 - Styled Components (en Login)
@@ -24,3 +24,9 @@ Desarrollado usando `node 10.13` y `yarn 1.13`.
 `yarn start`
 
 Es necesario tener un emulador _Android_ u _iOS_ corriendo.
+
+Alternativamente, se puede escanear el código QR que genera Expo, mediante la app de Expo.
+
+### Demo
+
+![Demo](https://github.com/libasoles/react-native-user-profile/blob/master/demo/demo.gif)
