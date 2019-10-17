@@ -27,6 +27,6 @@ Es necesario tener un emulador _Android_ u _iOS_ corriendo.
 
 Alternativamente, se puede escanear el código QR que genera Expo, mediante la app de Expo.
 
-### Demo
+## Demo
 
 ![Demo](https://github.com/libasoles/react-native-user-profile/blob/master/demo/demo.gif)

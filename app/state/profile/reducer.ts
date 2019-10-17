@@ -1,5 +1,8 @@
 import ReduxAction from "../../types/reduxAction";
 
+/**
+ * Datos harcodeados ya que están fuera del scope del ejercicio
+ */
 const initialState = {
   stats: {
     libraryBooks: 19,
