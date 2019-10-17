@@ -7,6 +7,7 @@ import Button from "../../components/Button";
 import Input from "../../components/Input";
 import TextFragment from "../../components/TextFragment";
 import TransparentButton from "../components/TransparentButton";
+import { Keyboard } from "react-native";
 
 type Props = {
   onSubmit: (any) => void;
@@ -24,6 +25,7 @@ function useForm(onSubmit) {
   const [password, setPassword] = useState("");
 
   const submit = useCallback(() => {
+    Keyboard.dismiss();
     onSubmit({ username, password });
   }, [username, password]);
 
@@ -99,6 +101,7 @@ function FormDivider({ active }) {
 
 const Container = styled.View`
   margin: 0 25px;
+  flex: 1;
 `;
 
 const FacebookButton = styled(Button)`

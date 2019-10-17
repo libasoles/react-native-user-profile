@@ -34,8 +34,10 @@ export function authenticate() {
       const alreadyAuthenticated = getState().auth.currentUser;
       if (!alreadyAuthenticated) {
         const currentToken = await Storage.getItem(authStorageKey);
-        setAPIToken(currentToken);
-        dispatch(loginAction(currentToken));
+        if (currentToken) {
+          setAPIToken(currentToken);
+          dispatch(loginAction(currentToken));
+        }
       }
     } catch (e) {}
   };

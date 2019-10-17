@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 
-import colors from "../../config/colors";
 import BookType from "../../types/book";
 import { fetchBooks } from "../../state/myLibrary/actions";
 import Book from "./Book";
 import NoBooks from "./NoBooks";
+import Loading from "../../components/Loading";
 
 type Returns = {
   list: BookType[];
@@ -41,14 +41,6 @@ function useBooks({ status }): Returns {
   });
 }
 
-function Loading() {
-  return (
-    <View style={styles.loading}>
-      <ActivityIndicator size="small" color={colors.text.secondary} />
-    </View>
-  );
-}
-
 export default function Books(props) {
   const { status } = props.navigation.state.params;
   const { loading, list, setPage } = useBooks({ status });
@@ -76,10 +68,5 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 10,
     marginBottom: 20
-  },
-  loading: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
   }
 });

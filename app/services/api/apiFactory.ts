@@ -13,13 +13,14 @@ function createClient({ baseURL }) {
   });
 }
 
-function setClientToken(client: ApiInstance) {
-  return (token: string): void => {
+function configureAPIClient(client: ApiInstance) {
+  const setAPIToken = (token: string): void => {
     client.interceptors.request.use(function(config: ApiConfig): ApiConfig {
       config.headers.Authorization = token ? `Bearer ${token}` : "";
       return config;
     });
   };
+  return setAPIToken;
 }
 
-export { createClient, setClientToken };
+export { createClient, configureAPIClient };
