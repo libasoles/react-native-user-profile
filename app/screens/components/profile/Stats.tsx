@@ -47,12 +47,12 @@ const styles = StyleSheet.create({
 
   },
   value: {
-    fontSize: 21,
+    fontSize: 19,
     fontFamily: "latoBold",
     color: colors.text.dark
   },
   label: {
-    fontSize: 16,
+    fontSize: 15,
     fontFamily: "lato",
     color: colors.text.dark
   }

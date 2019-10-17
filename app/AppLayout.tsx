@@ -61,7 +61,7 @@ const TabNavigatorConfig = {
       paddingBottom: 5
     },
     labelStyle: {
-      fontSize: 10,
+      fontSize: 9,
       fontFamily: "lato",
     },
   }

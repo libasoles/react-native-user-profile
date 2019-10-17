@@ -9,7 +9,7 @@ function Star() {
     <Icon
       name="star"
       color={colors.secondary}
-      size={24}
+      size={20}
       style={{ marginRight: 4 }}
     />
   );

@@ -29,21 +29,21 @@ export default function StatusPicker({
       items={statuses}
       useNativeAndroidPickerStyle={false}
       style={style}
-      Icon={() => <Icon name="chevron-down" color={colors.text.lighter} />}
+      Icon={() => <Icon name="chevron-down" size={26} color={colors.text.lighter} />}
     />
   );
 }
 
 const shareStyle = {
   fontFamily: "raleway",
-  fontSize: 18,
+  fontSize: 15,
   color: colors.text.dark,
   paddingRight: 30,
   borderColor: colors.dark,
   borderWidth: 1,
   borderRadius: 6,
   paddingHorizontal: 10,
-  paddingVertical: 10,
+  paddingVertical: 6,
   marginVertical: 5,
 };
 
@@ -61,11 +61,11 @@ const style = StyleSheet.create({
   iconContainer: {
     flex: 1,
     paddingHorizontal: 6,
-    paddingVertical: 9,
+    paddingVertical: 8,
     backgroundColor: colors.bg.dark,
     borderBottomRightRadius: 6,
     borderTopRightRadius: 6,
-    top: 4,
+    top: 5,
     right: -20 // needed for auto-width
   }
 });

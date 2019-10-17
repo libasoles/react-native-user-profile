@@ -13,7 +13,7 @@ type Props = {
 export default function Icon({
   name,
   style = {},
-  size = 32,
+  size = 28,
   color = colors.lighter
 }: Props) {
   return <Feather name={name} size={size} style={[{ color }, style]} />;

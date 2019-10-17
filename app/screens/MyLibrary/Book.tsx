@@ -75,19 +75,19 @@ const styles = StyleSheet.create({
     marginLeft: 12
   },
   genre: {
-    fontSize: 12,
+    fontSize: 10,
     fontFamily: "lato",
     color: colors.text.secondary
   },
   title: {
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: "ralewayBold",
     color: colors.text.primary,
     marginTop: 2,
     marginBottom: 2
   },
   author: {
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: "lato",
     color: colors.text.secondary
   },

@@ -27,13 +27,13 @@ export default function PersonalInfo({ data }: { data: PersonalInfoType }) {
               {age + " " + texts.profile.years}
             </TextFragment>
           </View>
-          <TextButton style={{ fontSize: 15 }}>
+          <TextButton style={{ fontSize: 13 }}>
             {texts.profile.editGenders}
           </TextButton>
         </View>
       </View>
       <View style={styles.editProfile}>
-        <Button style={{ fontSize: 15, height: 42 }}>
+        <Button style={{ fontSize: 13, height: 36 }}>
           {texts.profile.edit}
         </Button>
       </View>
@@ -57,14 +57,14 @@ const styles = StyleSheet.create({
     marginRight: 10
   },
   name: {
-    fontSize: 21,
+    fontSize: 18,
     fontFamily: "ralewayBold",
     color: colors.text.dark,
     marginTop: 4,
     marginBottom: 4
   },
   age: {
-    fontSize: 15,
+    fontSize: 14,
     fontFamily: "lato",
     color: colors.text.secondary,
     marginTop: 2,
